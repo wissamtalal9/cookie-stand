@@ -1,0 +1,19 @@
+
+  body{
+    background: powderblue;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+text-align: center;
+padding: 10px;
+
+  }
+
+  .imagfesh{
+  margin: 10px;
+  }
+  .btn{
+    background-color: salmon;
+    border:snow;
+    border-color: snow;
+    font-size: 25x;
+  }
