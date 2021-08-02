@@ -4,7 +4,7 @@ let articleElement = document.createElement('article');
 Profiles.appendChild(articleElement);
 let tableelement = document.createElement('table');
 articleElement.appendChild(tableelement);
-let time = ['    ', '6:00am ', '7:00am ', '8:00am ', '9:00am ', '10:00am ', '11:00am ', '12:00pm ', '1:00pm ', '2:00pm ', '3:00pm ', '4:00pm ', '5:00pm ', '6:00pm ', '7:00pm ', 'Daily location Total '];
+let time = ['    ', '6:00am ', '7:00am ', '8:00am ', '9:00am ', '10:00am ', '11:00am ', '12:00pm ', '1:00pm ', '2:00pm ', '3:00pm ', '4:00pm ', '5:00pm ', '6:00pm ', '7:00pm ', 'Daily Name Total '];
 let column = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let row_1 = document.createElement('tr');
 tableelement.appendChild(row_1);
@@ -71,4 +71,4 @@ tokyo.land();
 Dubai.land();
 Paris.land();
 lima.land();
-footer();
+footer()
