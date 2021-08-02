@@ -12,8 +12,10 @@ padding: 10px;
   margin: 10px;
   }
   .btn{
-    background-color: salmon;
+    background-color:aliceblue;
     border:snow;
     border-color: snow;
-    font-size: 25x;
+    font-size: 50x;
+    padding: 20px;
+
   }
