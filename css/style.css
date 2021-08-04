@@ -64,7 +64,7 @@ padding: 10px;
   }
 .wrapper2 {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 .wrapper2 img {
   margin-top: 30px;
@@ -75,10 +75,54 @@ margin-right: 171px;
 .btn {
   background-color: aqua;
   font-size: 16px;
+  margin-bottom: 30px;
 }
 
 .copyright {
   background-color:#333;
   font-size: 20px;
   padding: 20px;
+}
+body {
+  font-family: Arial;
+}
+
+input[type=text], select, input[type=number],select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+label {
+  font-size: 18px;
+}
+.Tables1 {
+  .tab1{
+    background-color:rgb(71, 70, 70)}
 }
