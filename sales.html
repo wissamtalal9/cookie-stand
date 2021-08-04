@@ -1,42 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sales Salmon</title>
-    <link href="./css/style.css" type="text/css" rel="stylesheet"/>
-    <!--<script src="./js/app.js"></script> -->
+
+<head>
+  <title>Sales Salmon</title>
+  <link href="./css/style.css" type="text/css" rel="stylesheet" />
+
+  <!--<script src="./js/app.js"></script> -->
 
 </head>
-  <body>
-    <header>
-      <ul class="topnav">
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="sales.html">The Sales</a></li>
-        <li><a href="store.html">The Store</a></li>
-        <li><a href="order-processing.html">order processing</a></li>
-  
-        <li style="float:right"><a class="active" href="index.html">Cookies Stand Company</a></li>
-      </ul>
-      <h1>cookie stand project</h1>
-    </header>
-    <main>
-      <div id="salesprofile">
-        <!-- generate this from js: -->
-        <!-- <article>
-          <h2>Frankie</h2>
-          <p>Frankie is 3 months old, he is British</p>
-          <ul>
-            <li>Chasing</li>
-            <li>Napping</li>
-          </ul>
-          <img src="./images/frankie.jpeg">
-        </article> -->
-      </div>
-    </main>
-    <footer class="copyright">
-      <div>
-        @copyright by wissam talal AbuAresh
-      </div>
-    </footer>
-    <script src="./js/lab07.js"></script>
-  </body>
+
+<body>
+  <header>
+    <ul class="topnav">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="sales.html">The Sales</a></li>
+      <li><a href="store.html">The Store</a></li>
+      <li><a href="order-processing.html">order processing</a></li>
+
+      <li style="float:right"><a class="active" href="index.html">Cookies Stand Company</a></li>
+    </ul>
+    <h1>cookie stand project</h1>
+  </header>
+  <main>
+    <div id="salesprofile">
+    </div>
+    <div>
+      <fieldset>
+        <legend>
+          <h2>Added New Cookie Stand City</h2>
+        </legend>
+        <form id="CookiesForm">
+
+          <label for="CityCookies">City Name Of Cookies</label>
+          <select id="CityCookies" name="">
+            <option value="Amman">Amman</option>
+            <option value="Cairo">Cairo</option>
+            <option value="Jaddah">Jaddah</option>
+            <option value="London">London</option>
+            <option value="Jaddah">Jaddah</option>
+            <option value="Abu Dabi">Abu Dabi</option>
+            <option value="Alexandria">Alexandria</option>
+            <option value="Aurora">Aurora</option>
+            <option value="Austin">Austin</option>
+            <option value="Orlando">Orlando</option>
+            <option value="Phoenix">Phoenix</option>
+            <option value="Savannah">Savannah</option>
+            <option value="Madison">Madison</option>
+            <option value="Dayton">Dayton</option>
+            <option value="Dallas">Dallas</option>
+            <option value="Texas">Texas</option>
+          </select>
+
+          <label for="MinCookies">Enter Minumum Cookies (between 1 and 25):</label>
+          <input type="number" id="MinCookies" name="" min="1" max="25"></br>
+
+          <label for="MaxCookies">Enter Maximum Cookies (between 1 and 100):</label>
+          <input type="number" id="MaxCookies" name="" min="1" max="100"></br>
+
+          <label for="AvgCookies">Enter The Average Of Cookies (between 1.0 and 10.0):</label>
+          <input type="number" id="AvgCookies" name="" min="1.0" max="10.9" step="0.01"></br>
+
+          <input type="submit" value="Save">
+        </form>
+      </fieldset>
+    </div>
+  </main>
+  <footer class="copyright">
+    <div>
+      @copyright by wissam talal AbuAresh
+    </div>
+  </footer>
+  <script src="./js/lab07.js"></script>
+</body>
+
 </html>
