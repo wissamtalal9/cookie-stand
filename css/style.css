@@ -1,6 +1,6 @@
 
   body{
-    background-image: url('https://wallpaperaccess.com/full/1971765.jpg');
+    background-image: url('https://www.wallpapertip.com/wmimgs/81-814842_full-page-background-image-for-website.jpg');
     font-family: Arial, sans-serif;
     font-size: 15px;
 text-align: center;
@@ -19,12 +19,20 @@ padding: 10px;
     padding: 20px;
 
   }
+
   table, th, td {
     border: 10px solid rgb(37, 55, 158);
     border-collapse: collapse;
     padding: auto;
     font-size: 20px;
     color:rgb(red, rgb(27, 1, 1), blue);
+  }
+  th {
+    background-color: #333;
+    color:#f2f2f2;
+  }
+  td {
+    background-color:#04AA6D;
   }
 
   ul {
@@ -61,6 +69,7 @@ padding: 10px;
   .wrapper img {
     width: 300px;
     height: 375px;
+    border-radius : 50%;
   }
 .wrapper2 {
   display: grid;
@@ -70,25 +79,30 @@ padding: 10px;
   margin-top: 30px;
 width: 480px;
 height: 400px;
-margin-right: 171px;
+margin-right: 15px;
+margin-top: 15px;
+border-radius: 50%;
 }
 .btn {
-  background-color: aqua;
+  background-color:#333;
   font-size: 16px;
   margin-bottom: 30px;
+  color: #f2f2f2;
 }
 
 .copyright {
-  background-color:#333;
+  background-color: #333;
   font-size: 20px;
   padding: 20px;
+  height: 48px;
+  padding-top: 1px;
 }
 body {
   font-family: Arial;
 }
 
 input[type=text], select, input[type=number],select {
-  width: 100%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   display: block;
@@ -96,11 +110,13 @@ input[type=text], select, input[type=number],select {
   border-radius: 4px;
   box-sizing: border-box;
   text-align: center;
+  display: inline-block;
+
 }
 
 
 input[type=submit] {
-  width: 100%;
+  width: 50%;
   background-color: #04AA6D;
   color: white;
   padding: 14px 20px;
@@ -122,7 +138,8 @@ div.container {
 label {
   font-size: 18px;
 }
-.Tables1 {
-  .tab1{
-    background-color:rgb(71, 70, 70)}
+
+.paddress {
+  font-weight: bold;
+
 }

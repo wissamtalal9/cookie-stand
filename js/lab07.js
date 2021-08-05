@@ -1,15 +1,15 @@
 'use strict'
 //#################################################################################33
-
+// Make The Arrays
 let hours = ['  City/Times  ', '6 am ', '7 am ', '8 am ',
   '9 am ', '10 am ', '11 am ', '12 pm ', '1 pm ',
   '2 pm ', '3 pm ', '4 pm ', '5 pm ', '6 pm ', '7 pm ',
   'Daily location Total '];
-  let column = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  let Row = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+   Row[14] = 'LTUC Gollege';
   let Count = [];
 //#################################################################################33
 let Profiles = document.getElementById('salesprofile');
-let AddCityCookies = document.getElementById('CookiesForm');
 
 let articleElement = document.createElement('article');
 Profiles.appendChild(articleElement);
@@ -17,7 +17,7 @@ let TableElement = document.createElement('table');
 articleElement.appendChild(TableElement);
 
 //#################################################################################33
-
+// The main of table Hours (Concept not change)
 function header() {
 
   let row = document.createElement('tr');
@@ -31,9 +31,11 @@ function header() {
 
 
 // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-// Footer 2
-function footer2() {
+// Add New City in the table when add one
+function MakeAgainTable() {
+  // We Must have to delete the total of row last from count array
   TableElement.removeChild(TableElement.childNodes[Count]);
+  // creat new city and added
   let row_2 = document.createElement('tr')
   TableElement.appendChild(row_2)
 
@@ -41,28 +43,32 @@ function footer2() {
   th_1.textContent = 'Total OF C/H'
   row_2.appendChild(th_1)
 
+
+  // calcualate the total after added the city
   for (let i = 0; i < hours.length; i++) {
 
     let td_1 = document.createElement('td');
-    td_1.textContent = column[i];
+    td_1.textContent = Row[i];
     row_2.appendChild(td_1);
   }
 }
 // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-// Footer 1
+// Footer (The end of the table)
 function footer() {
   let row_2 = document.createElement('tr')
   TableElement.appendChild(row_2)
-
+  // Add New TH in the table (The Total)
   let th_1 = document.createElement('th')
-  th_1.textContent = 'total'
+  th_1.textContent = 'total C/ber H'
   row_2.appendChild(th_1)
-
-  for (let i = 1; i < hours.length; i++) {
+// $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+// The Total Of each Row in the table
+  for (let i = 0; i < hours.length; i++) {
 
     let td_1 = document.createElement('td');
-    td_1.textContent = column[i];
+    td_1.textContent = Row[i];
     row_2.appendChild(td_1);
+    //console.log(td_1);
   }
 }
 // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -77,7 +83,7 @@ function MainConstructor(name, min, max, avg) {
   this.random = 0;
 }
 // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-// Random Number
+// Make Random Number and save it in Cookies
 
 
 MainConstructor.prototype.randomFun = function () {
@@ -96,22 +102,22 @@ MainConstructor.prototype.render = function () {
   let td1 = document.createElement('th');
   td1.textContent = this.name;
   tr1.appendChild(td1);
-
+// $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+// Added random number for each column in the table
   for (let i = 0; i < hours.length - 2; i++) {
     this.random = this.randomFun();
-    column[i] += this.random;
+    Row[i] += this.random;
     let tdElement = document.createElement('td');
     tdElement.textContent = this.random;
     tr1.appendChild(tdElement);
+    //console.log(tdElement);
 }
-  column[hours - 1] += this.total;
+// The Total for each column in the table
+  Row[hours - 1] += this.total;
   let tdElement = document.createElement('td');
   tdElement.textContent = this.total;
   tr1.appendChild(tdElement);
-  
-
-
-
+  //console.log(tdElement);
 
 }
 // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -129,13 +135,10 @@ Dubai.render();
 Paris.render();
 Lima.render();
 footer();
-
-
-
-
 // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-// The Javascript for get value From Form CookiesForm
+// The Javascript for get value From Form CookiesForm in index.html
 //console.log(AddCityCookies)
+let AddCityCookies = document.getElementById('CookiesForm');
 
 AddCityCookies.addEventListener('submit', submitHandler);
 
@@ -147,15 +150,19 @@ function submitHandler(event) {
   let AvgCookies = event.target.AvgCookies.value;
   let NewCountry = new MainConstructor(CityCookies, MinCookies, MaxCookies, AvgCookies);
 
-  // while(MinCookies.value > MaxCookies.value) {
-  //   alert ('You Enter Invalid number the min great max');
-  //   CookiesForm.reset();
-  //   CookiesForm.value.reset();
-  // }
-  
+  // console.log(MinCookies,MaxCookies);
+  if (MaxCookies > MinCookies ){
 
+      // Reset Value in form when enter it
   CookiesForm.reset();
+  // Must Render before call function MakeAgainTable
   NewCountry.render();
-  footer2();
+// call this function to make table again to ensure the total in the end
+  MakeAgainTable();
+  }
+  else{
+    alert('The Minumum value grat than Maximum type again ');
+    CookiesForm.reset();
 
+  }
 }
