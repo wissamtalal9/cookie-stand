@@ -35,6 +35,7 @@ function header() {
 function MakeAgainTable() {
   // We Must have to delete the total of row last from count array
   TableElement.removeChild(TableElement.childNodes[Count]);
+  //TableElement.deleteRow(-1);
   // creat new city and added
   let row_2 = document.createElement('tr')
   TableElement.appendChild(row_2)
@@ -150,6 +151,8 @@ function submitHandler(event) {
   let AvgCookies = event.target.AvgCookies.value;
   let NewCountry = new MainConstructor(CityCookies, MinCookies, MaxCookies, AvgCookies);
 
+
+  //document.getElementById('salestable').deleteRow(all.length+1);
   // console.log(MinCookies,MaxCookies);
   if (MaxCookies > MinCookies ){
 
@@ -157,6 +160,7 @@ function submitHandler(event) {
   CookiesForm.reset();
   // Must Render before call function MakeAgainTable
   NewCountry.render();
+  //TableElement.deleteRow(-2);
 // call this function to make table again to ensure the total in the end
   MakeAgainTable();
   }
@@ -166,3 +170,7 @@ function submitHandler(event) {
 
   }
 }
+
+
+
+
